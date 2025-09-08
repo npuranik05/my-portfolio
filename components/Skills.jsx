@@ -27,34 +27,34 @@ export default function Skills() {
 
   const certifications = [
     {
-      name: "Microsoft 365 Certifications",
-      issuer: "Microsoft",
-      image: "/microsoft-certificate-placeholder.jpg",
-    },
-    {
-      name: "Machine Learning Fundamentals",
-      issuer: "Udemy",
-      image: "/udemy-certificate-placeholder.jpg",
-    },
-    {
       name: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
-      image: "/aws-certificate-placeholder.jpg",
+      image: "/amazon.png",
     },
     {
-      name: "Docker Certified Associate",
-      issuer: "Docker",
-      image: "/docker-certificate-placeholder.jpg",
+      name: "Microsoft Azure Fundamentals",
+      issuer: "Microsoft",
+      image: "/microsoft.png",
     },
     {
       name: "React Developer",
       issuer: "Meta",
-      image: "/react-certificate-placeholder.jpg",
+      image: "/meta.jpeg",
+    },
+    {
+      name: "Docker Certified Associate",
+      issuer: "Docker",
+      image: "/docker.png",
+    },
+    {
+      name: "Machine Learning Fundamentals",
+      issuer: "Udemy",
+      image: "/udemy.png",
     },
     {
       name: "Node.js Application Developer",
       issuer: "OpenJS Foundation",
-      image: "/nodejs-certificate-placeholder.jpg",
+      image: "/open.jpg",
     },
   ]
 
@@ -68,12 +68,12 @@ export default function Skills() {
   return (
     <section id="skills" className="min-h-screen py-20 px-6 bg-neutral-800 relative flex flex-col">
       <div className="max-w-6xl mx-auto flex-1">
-        <h2 className="text-5xl font-bold text-center text-purple-400 mb-20 mt-8">Skills & Certifications</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-12 sm:mb-16 md:mb-20 mt-8">Skills & Certifications</h2>
 
         <div className="mb-12">
           <h3 className="text-2xl font-semibold text-white mb-8 text-center">Certifications</h3>
-          <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto mb-6">
-            {certifications.slice(0, 3).map((cert) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {certifications.map((cert) => (
               <div
                 key={cert.name}
                 className="group relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm text-white rounded-xl border border-purple-500/30 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/60"
@@ -86,49 +86,12 @@ export default function Skills() {
                     <div className="text-xs text-purple-300 mb-3">{cert.issuer}</div>
                   </div>
 
-                  <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-dashed border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300">
-                    <div className="text-center text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
-                      <svg className="w-6 h-6 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                      <p className="text-xs font-medium">Certificate</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {certifications.slice(3, 6).map((cert) => (
-              <div
-                key={cert.name}
-                className="group relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm text-white rounded-xl border border-purple-500/30 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/60"
-              >
-                <div className="p-4">
-                  <div className="text-center mb-3">
-                    <div className="font-bold text-sm group-hover:text-purple-300 transition-colors duration-300 leading-tight mb-2">
-                      {cert.name}
-                    </div>
-                    <div className="text-xs text-purple-300 mb-3">{cert.issuer}</div>
-                  </div>
-
-                  <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg border border-dashed border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300">
-                    <div className="text-center text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
-                      <svg className="w-6 h-6 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                      <p className="text-xs font-medium">Certificate</p>
-                    </div>
+                  <div className="relative aspect-[4/3] bg-white rounded-lg border border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300 overflow-hidden shadow-lg p-4">
+                    <img
+                      src={cert.image}
+                      alt={`${cert.name} logo`}
+                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
                 </div>
               </div>
@@ -158,7 +121,7 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToExperience}
           className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
