@@ -4,6 +4,7 @@ A modern, responsive portfolio website showcasing my projects, experience, and s
 
 ## 🚀 Live Demo
 
+nishantpuranik.com
 
 
 ## 🎯 About
@@ -92,10 +93,6 @@ Each project includes detailed descriptions, technologies used, and links to liv
 - **Email**: [npuranik05@gmail.com](mailto:npuranik05@gmail.com)
 - **LinkedIn**: [nishant-puranik-9484a6211](https://www.linkedin.com/in/nishant-puranik-9484a6211/)
 - **GitHub**: [nishantpuranik](https://github.com/nishantpuranik)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
