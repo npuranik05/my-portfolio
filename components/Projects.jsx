@@ -134,7 +134,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToContact}
           className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
