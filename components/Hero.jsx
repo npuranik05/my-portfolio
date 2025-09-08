@@ -83,24 +83,24 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="text-6xl md:text-7xl font-bold mb-4 min-h-[120px] flex items-center justify-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 min-h-[80px] sm:min-h-[100px] md:min-h-[120px] flex items-center justify-center px-4">
           <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
             {nameText}
             {nameText.length < fullName.length && <span className="animate-pulse">|</span>}
           </span>
         </h1>
 
-        <div className="min-h-[60px] flex items-center justify-center">
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl leading-relaxed">
+        <div className="min-h-[40px] sm:min-h-[50px] md:min-h-[60px] flex items-center justify-center px-4">
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl leading-relaxed text-center">
             {bioText}
             {showBio && bioText.length < fullBio.length && <span className="animate-pulse">|</span>}
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 px-4">
           <button
             onClick={scrollToContact}
-            className="group relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl px-8 py-4 text-white font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/50"
+            className="group relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/50 text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
             <span className="relative z-10 flex items-center gap-2">
@@ -118,7 +118,7 @@ export default function Hero() {
 
           <button
             onClick={downloadResume}
-            className="group relative overflow-hidden bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl px-8 py-4 text-white font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 hover:border-blue-400/50"
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 hover:border-blue-400/50 text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
             <span className="relative z-10 flex items-center gap-2">
@@ -135,7 +135,7 @@ export default function Hero() {
           </button>
         </div>
 
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-4 sm:gap-6 justify-center px-4">
           <button
             onClick={() => openLink("https://github.com/nishantpuranik")}
             className="social-button w-12 h-12 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:bg-purple-600 hover:text-white hover:shadow-lg hover:shadow-purple-500/30"
@@ -173,7 +173,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToAbout}
           className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"

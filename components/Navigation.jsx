@@ -39,21 +39,22 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="flex justify-between p-6 w-full bg-neutral-800 items-center fixed top-0 left-0 right-0 z-50">
+    <nav className="flex justify-between p-3 md:p-6 w-full bg-neutral-800 items-center fixed top-0 left-0 right-0 z-50">
       <button
         onClick={() => scrollToSection("home")}
-        className={`font-bold text-xl transition-all duration-300 cursor-pointer ${
+        className={`font-bold text-sm md:text-3xl transition-all duration-300 cursor-pointer ${
           activeSection === "home" ? "text-purple-400" : "text-white hover:text-purple-400"
         }`}
       >
-        Nishant Puranik
+        <span className="hidden md:inline">Nishant Puranik</span>
+        <span className="md:hidden">Nish</span>
       </button>
-      <div className="flex space-x-8">
+      <div className="flex space-x-1 md:space-x-8">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={`transition-all duration-300 cursor-pointer font-medium ${
+            className={`transition-all duration-300 cursor-pointer font-medium text-xs md:text-base ${
               activeSection === item.id
                 ? "text-purple-400"
                 : "text-gray-300 hover:text-purple-400"
