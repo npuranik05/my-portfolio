@@ -47,7 +47,7 @@ export default function Projects() {
         "Built a multi-user desktop app in JavaFX with secure login, role-based access, and housing data management via Derby DB. Created detailed UML diagrams and implemented distinct features.",
       image: "/real-estate-management.jpg",
       technologies: ["JavaFX", "Derby DB", "UML", "Java"],
-      period: "February 2025 - March 2025",
+      period: "January 2025 - March 2025",
     },
     {
       title: "Fantasy RPG Game",
