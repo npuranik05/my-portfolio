@@ -45,8 +45,8 @@ export default function Hero() {
 
   const downloadResume = () => {
     const link = document.createElement("a")
-    link.href = "/Puranik_Nishant.pdf"
-    link.download = "Puranik_Nishant.pdf"
+    link.href = "/Nishant_Puranik.pdf"
+    link.download = "Nishant_Puranik.pdf"
     link.click()
   }
 

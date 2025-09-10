@@ -23,7 +23,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6 bg-neutral-800">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <h2 className="text-5xl font-bold text-white mb-4">

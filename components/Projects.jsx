@@ -18,11 +18,11 @@ export default function Projects() {
       period: "May 2024 - August 2024",
     },
     {
-      title: "Smart Music Mood & Recommender",
+      title: "PhishSense - AI Phishing Detection System",
       description:
-        "AI-powered application that analyzes audio features with Librosa to classify song moods and generates mood-aware recommendations. Built with Python backend and JavaScript frontend.",
-      image: "/music.jpg",
-      technologies: ["Python", "FastAPI", "Librosa", "JavaScript"],
+        "Led development of an AI-powered phishing detection system using PyTorch and DistilBERT. Built FastAPI backend, React dashboard, and browser extension for real-time email scanning.",
+      image: "/cyber.jpg",
+      technologies: ["PyTorch", "FastAPI", "React", "PostgreSQL", "Docker"],
       period: "September 2025 – Present (In Progress)",
     },
     {
@@ -59,10 +59,10 @@ export default function Projects() {
     },
   ]
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact")
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
+  const scrollToSkills = () => {
+    const skillsSection = document.getElementById("skills")
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -71,7 +71,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center py-16 px-6 bg-neutral-800 relative">
+    <section id="projects" className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl font-bold text-center text-purple-400 mb-20">Projects</h2>
 
@@ -136,9 +136,9 @@ export default function Projects() {
 
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button
-          onClick={scrollToContact}
+          onClick={scrollToSkills}
           className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Contact section"
+          aria-label="Scroll to Skills section"
         >
           <svg
             className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"

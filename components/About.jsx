@@ -3,15 +3,15 @@
 import Image from "next/image"
 
 export default function About() {
-  const scrollToSkills = () => {
-    const skillsSection = document.getElementById("skills")
-    if (skillsSection) {
-      skillsSection.scrollIntoView({ behavior: "smooth" })
+  const scrollToExperience = () => {
+    const experienceSection = document.getElementById("experience")
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6 bg-neutral-800 relative">
+    <section id="about" className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-12 sm:mb-16 md:mb-20">Get to Know Me</h2>
 
@@ -66,9 +66,9 @@ export default function About() {
 
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button
-          onClick={scrollToSkills}
+          onClick={scrollToExperience}
           className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Skills section"
+          aria-label="Scroll to Experience section"
         >
           <svg
             className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"

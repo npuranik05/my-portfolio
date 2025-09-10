@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my projects, experience, and s
 
 ## 🚀 Live Demo
 
-nishantpuranik.com
+🌐 **[nishantpuranik.com](https://www.nishantpuranik.com/)**
 
 
 ## 🎯 About
