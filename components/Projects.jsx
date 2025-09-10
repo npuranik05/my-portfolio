@@ -26,12 +26,12 @@ export default function Projects() {
       period: "September 2025 – Present (In Progress)",
     },
     {
-      title: "Aviation Fleet Management System",
+      title: "Aviation Fleet Management Database",
       description:
-        "Designing a relational database and web interface for an aviation fleet management system as part of a Database Management Systems course. Built E-R model and normalized tables (3NF).",
+        "Led development of a database system for fleet operations with MySQL triggers and stored procedures. Built Flask web interface for querying fleet records and real-time dashboards.",
       image: "/aviation-tracker.jpg",
-      technologies: ["SQL", "MySQL", "Python", "Web Development"],
-      period: "September 2025 – Present (In Progress)",
+      technologies: ["MySQL", "Flask", "HTML/CSS", "JavaScript", "Python"],
+      period: "August 2025 - September 2025",
     },
     {
       title: "Personal Portfolio Website",
