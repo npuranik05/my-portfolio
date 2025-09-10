@@ -137,7 +137,7 @@ export default function Hero() {
 
         <div className="flex gap-4 sm:gap-6 justify-center px-4">
           <button
-            onClick={() => openLink("https://github.com/nishantpuranik")}
+            onClick={() => openLink("https://github.com/npuranik05")}
             className="social-button w-12 h-12 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:bg-purple-600 hover:text-white hover:shadow-lg hover:shadow-purple-500/30"
             aria-label="GitHub"
           >

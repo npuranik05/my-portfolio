@@ -67,7 +67,7 @@ export default function Projects() {
   }
 
   const viewAllProjects = () => {
-    window.open("https://github.com/nishantpuranik", "_blank", "noopener,noreferrer")
+    window.open("https://github.com/npuranik05", "_blank", "noopener,noreferrer")
   }
 
   return (

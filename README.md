@@ -92,7 +92,7 @@ Each project includes detailed descriptions, technologies used, and links to liv
 
 - **Email**: [npuranik05@gmail.com](mailto:npuranik05@gmail.com)
 - **LinkedIn**: [nishant-puranik-9484a6211](https://www.linkedin.com/in/nishant-puranik-9484a6211/)
-- **GitHub**: [nishantpuranik](https://github.com/nishantpuranik)
+- **GitHub**: [npuranik05](https://github.com/npuranik05)
 
 ## 🤝 Contributing
 
