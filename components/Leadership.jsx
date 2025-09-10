@@ -42,6 +42,16 @@ export default function Leadership() {
         "Supported a thriving community of 1,000+ members, leading youth initiatives that promoted cultural pride and reduced barriers to involvement.",
       ],
     },
+    {
+      title: "Eco Coordinator",
+      organization: "St. Joan of Arc Catholic Secondary School",
+      period: "Sept 2021 – June 2023",
+      description: [
+        "Managed campus greenhouse operations and coordinated plant maintenance schedules throughout the academic year.",
+        "Led peer mentorship programs in architectural design and sustainable development, facilitating collaborative learning sessions across multiple grade levels.",
+        "Organized educational workshops on eco-friendly architecture and green building practices, promoting environmental awareness across the school community.",
+      ],
+    },
   ]
 
   const scrollToContact = () => {

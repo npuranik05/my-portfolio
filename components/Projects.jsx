@@ -12,7 +12,7 @@ export default function Projects() {
     {
       title: "Vehicle Booking System",
       description:
-        "Developed a Python and Excel-based vehicle booking system for Metrolinx GO Transit, increasing booking efficiency by 38%. Led the entire project working with senior colleagues.",
+        "Developed a Python and Excel-based vehicle booking system for Metrolinx GO Transit, increasing booking efficiency by 58%. Led the entire project working with senior colleagues.",
       image: "/vehicle-booking-system.jpg",
       technologies: ["Python", "Excel", "Data Analysis", "GeoTab"],
       period: "May 2024 - August 2024",
