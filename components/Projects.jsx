@@ -12,9 +12,9 @@ export default function Projects() {
     {
       title: "Vehicle Booking System",
       description:
-        "Developed a Python and Excel-based vehicle booking system for Metrolinx GO Transit, increasing booking efficiency by 58%. Led the entire project working with senior colleagues.",
+        "A Python-based fleet management system for optimizing vehicle assignments and booking efficiency, showcasing advanced algorithms and intelligent assignment concepts from prior experience.",
       image: "/vehicle-booking-system.jpg",
-      technologies: ["Python", "Excel", "Data Analysis", "GeoTab"],
+      technologies: ["Python", "Plotly", "SQLite", "Pandas", "OpenPyXL", "Streamlit", "GeoTab"],
       period: "May 2024 - August 2024",
     },
     {
@@ -38,8 +38,8 @@ export default function Projects() {
       description:
         "Built and deployed a fully responsive portfolio using React and Tailwind CSS, showcasing projects, resume, and interactive components across devices. Integrated dynamic contact form.",
       image: "/portfolio-website.jpg",
-      technologies: ["React", "Tailwind CSS", "JavaScript", "GitHub Pages"],
-      period: "June 2025 - Present",
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      period: "June 2025 - Ongoing",
     },
     {
       title: "Real Estate Management System",
