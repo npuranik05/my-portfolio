@@ -31,6 +31,33 @@ This portfolio website represents my journey as a software engineer, highlightin
 - **Images**: Next.js Image optimization
 - **Deployment**: Vercel/Netlify ready
 
+## 🚧 Challenges & Solutions
+
+### Challenge 1: Responsive Design Complexity
+**Problem**: Creating a seamless experience across desktop, tablet, and mobile devices proved challenging, especially with the timeline components and navigation elements.
+
+**Solution**: Implemented a mobile-first approach using Tailwind's responsive utilities, created flexible grid layouts, and used CSS media queries to ensure optimal viewing on all screen sizes. Added custom breakpoints for better control over component behavior.
+
+### Challenge 2: Smooth Scroll Navigation
+**Problem**: Implementing scroll-tracking navigation that highlights the active section while maintaining smooth scrolling behavior was technically complex.
+
+**Solution**: Used React's `useEffect` and `useState` hooks to track scroll position, implemented intersection observers for better performance, and added debouncing to prevent excessive re-renders during scrolling.
+
+### Challenge 3: Performance Optimization
+**Problem**: Large images and multiple animations were causing slow load times and poor performance on mobile devices.
+
+**Solution**: Implemented Next.js Image optimization, lazy loading for below-the-fold content, and CSS transforms instead of changing layout properties for animations. Added image compression and WebP format support.
+
+### Challenge 4: Cross-Browser Compatibility
+**Problem**: CSS gradients and modern features weren't rendering consistently across different browsers, particularly older versions of Safari and Internet Explorer.
+
+**Solution**: Added vendor prefixes, implemented fallback styles for older browsers, and used progressive enhancement techniques to ensure core functionality works everywhere while advanced features enhance the experience on modern browsers.
+
+### Challenge 5: Content Management & Updates
+**Problem**: Hardcoded content made it difficult to update project information and experience details without diving into component code.
+
+**Solution**: Created structured data objects for projects and experience, implemented a more maintainable component architecture, and added clear separation between data and presentation logic for easier future updates.
+
 ## 📁 Project Structure
 
 ```
