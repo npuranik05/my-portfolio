@@ -7,22 +7,40 @@
  */
 export default function Skills() {
   const skills = [
-    { name: "Java", logo: "☕", color: "from-orange-600 to-red-600" },
+    // Programming Languages
     { name: "Python", logo: "🐍", color: "from-blue-500 to-yellow-400" },
+    { name: "Java", logo: "☕", color: "from-orange-600 to-red-600" },
     { name: "JavaScript", logo: "🟨", color: "from-yellow-400 to-yellow-600" },
-    { name: "C#", logo: "🔷", color: "from-purple-600 to-blue-600" },
+    { name: "TypeScript", logo: "🔷", color: "from-blue-600 to-blue-800" },
     { name: "C++", logo: "🔵", color: "from-blue-600 to-indigo-600" },
-    { name: "C", logo: "🔸", color: "from-gray-600 to-gray-800" },
+    { name: "C#", logo: "🔷", color: "from-purple-600 to-blue-600" },
+    { name: "SQL", logo: "🗄️", color: "from-indigo-500 to-purple-600" },
     { name: "HTML", logo: "🌐", color: "from-orange-500 to-red-500" },
     { name: "CSS", logo: "🎨", color: "from-blue-400 to-blue-600" },
-    { name: "SQL", logo: "🗄️", color: "from-indigo-500 to-purple-600" },
-    { name: "Git", logo: "🌿", color: "from-orange-600 to-red-600" },
-    { name: "MATLAB", logo: "📊", color: "from-orange-500 to-orange-700" },
+    
+    // Frameworks & Libraries
     { name: "React", logo: "⚛️", color: "from-cyan-400 to-blue-500" },
-    { name: "Tailwind", logo: "💨", color: "from-teal-400 to-cyan-500" },
-    { name: "TypeScript", logo: "🔷", color: "from-blue-600 to-blue-800" },
+    { name: "Next.js", logo: "⚡", color: "from-gray-700 to-gray-900" },
     { name: "Node.js", logo: "🟢", color: "from-green-500 to-green-700" },
+    { name: "FastAPI", logo: "🚀", color: "from-green-400 to-teal-500" },
+    { name: "Flask", logo: "🌶️", color: "from-red-500 to-orange-500" },
+    { name: "PyTorch", logo: "🔥", color: "from-orange-500 to-red-500" },
+    { name: "TensorFlow", logo: "🧠", color: "from-orange-400 to-yellow-500" },
+    { name: "Pandas", logo: "🐼", color: "from-blue-400 to-indigo-500" },
+    { name: "Tailwind", logo: "💨", color: "from-teal-400 to-cyan-500" },
+    
+    // Databases & Cloud
+    { name: "PostgreSQL", logo: "🐘", color: "from-blue-600 to-indigo-600" },
+    { name: "MySQL", logo: "🐬", color: "from-orange-500 to-blue-500" },
     { name: "AWS", logo: "☁️", color: "from-orange-400 to-yellow-500" },
+    { name: "Docker", logo: "🐳", color: "from-blue-400 to-blue-600" },
+    
+    // Tools & Analytics
+    { name: "Git", logo: "🌿", color: "from-orange-600 to-red-600" },
+    { name: "Power BI", logo: "📊", color: "from-yellow-500 to-orange-500" },
+    { name: "Tableau", logo: "📈", color: "from-blue-500 to-purple-500" },
+    { name: "Jira", logo: "🎯", color: "from-blue-600 to-blue-800" },
+    { name: "Figma", logo: "🎨", color: "from-purple-500 to-pink-500" },
   ]
 
   const certifications = [
