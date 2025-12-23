@@ -7,6 +7,7 @@ export default function Hero() {
   const [nameText, setNameText] = useState("")
   const [bioText, setBioText] = useState("")
   const [showBio, setShowBio] = useState(false)
+  const [showResumeModal, setShowResumeModal] = useState(false)
 
   const fullName = "Nishant Puranik"
   const fullBio =
@@ -44,10 +45,7 @@ export default function Hero() {
   }, [showBio])
 
   const downloadResume = () => {
-    const link = document.createElement("a")
-    link.href = "/Nishant_Puranik.pdf"
-    link.download = "Nishant_Puranik.pdf"
-    link.click()
+    setShowResumeModal(true)
   }
 
   const openLink = (url) => {
@@ -74,7 +72,7 @@ export default function Hero() {
         <div className="mb-8">
           <div className="p-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 mx-auto w-fit">
             <Image
-              src="/Headshot.jpeg"
+              src="/Headshot.jpg"
               alt="Nishant Puranik"
               width={200}
               height={200}
@@ -189,6 +187,78 @@ export default function Hero() {
           </svg>
         </button>
       </div>
+
+      {/* Resume Modal */}
+      {showResumeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowResumeModal(false)}
+          ></div>
+          <div className="relative bg-neutral-800 border border-purple-500/30 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl shadow-purple-500/20">
+            <button
+              onClick={() => setShowResumeModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              aria-label="Close modal"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="text-center">
+              <div className="mb-4">
+                <svg
+                  className="w-16 h-16 mx-auto text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Resume Request</h3>
+              <p className="text-gray-300 mb-6 text-lg">
+                Please email me for my resume
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <button
+                  onClick={() => {
+                    setShowResumeModal(false)
+                    openLink("mailto:npuranik05@gmail.com")
+                  }}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30"
+                >
+                  Email Me
+                </button>
+                <button
+                  onClick={() => {
+                    setShowResumeModal(false)
+                    scrollToContact()
+                  }}
+                  className="bg-neutral-700 border border-purple-500/30 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 hover:border-purple-400/50"
+                >
+                  Go to Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }

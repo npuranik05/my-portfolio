@@ -3,7 +3,7 @@
 export default function Experience() {
   const experiences = [
     {
-      title: "Non-Revenue Vehicle Fleet Analyst Intern",
+      title: "Data Analyst Intern",
       company: "Metrolinx GO Transit",
       location: "Toronto, ON",
       logo: "/metrolinx.jpg",
