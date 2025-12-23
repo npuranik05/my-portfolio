@@ -71,13 +71,15 @@ export default function Hero() {
       <div className="text-center">
         <div className="mb-8">
           <div className="p-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 mx-auto w-fit">
-            <Image
-              src="/Headshot.jpg"
-              alt="Nishant Puranik"
-              width={200}
-              height={200}
-              className="rounded-full border-4 border-black shadow-2xl shadow-purple-500/30"
-            />
+            <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
+              <Image
+                src="/Headshot.jpg"
+                alt="Nishant Puranik"
+                width={200}
+                height={200}
+                className="w-full h-full object-cover rounded-full border-4 border-black shadow-2xl shadow-purple-500/30"
+              />
+            </div>
           </div>
         </div>
 
