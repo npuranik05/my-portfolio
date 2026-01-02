@@ -3,6 +3,16 @@
 export default function Leadership() {
   const leadershipRoles = [
     {
+      title: "Developer",
+      organization: "Western Cyber Society",
+      period: "Oct 2025 – Present",
+      description: [
+        "Collaborated on the design and development of a hybrid financial simulation framework combining deep learning with scenario-based market modeling.",
+        "Led development of the LLM-driven scenario generation pipeline, translating market news and qualitative signals into structured economic assumptions for simulation.",
+        "Supported model evaluation and validation by integrating scenario outputs into downstream risk analysis workflows.",
+      ],
+    },
+    {
       title: "Vice President of Events",
       organization: "AWARE",
       period: "Sept 2024 – Present",

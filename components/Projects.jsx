@@ -28,9 +28,9 @@ export default function Projects() {
     {
       title: "Aviation Fleet Management Database",
       description:
-        "Led development of a database system for fleet operations with MySQL triggers and stored procedures. Built Flask web interface for querying fleet records and real-time dashboards.",
+        "Led design of an airline operations database system, defining normalized schemas and complex entity relationships. Built a frontend demo and Python data generator to populate and showcase realistic system behavior.",
       image: "/aviation-tracker.jpg",
-      technologies: ["MySQL", "Flask", "HTML/CSS", "JavaScript", "Python"],
+      technologies: ["MySQL", "Python", "HTML/CSS", "JavaScript"],
       period: "August 2025 - September 2025",
     },
     {
