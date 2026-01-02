@@ -26,6 +26,14 @@ export default function Projects() {
       period: "September 2025 – Present (In Progress)",
     },
     {
+      title: "Course Management Platform",
+      description:
+        "Architected a production-grade platform using the MERN stack featuring a custom RBAC engine and 30+ RESTful endpoints to manage complex academic workflows. Engineered a robust security layer utilizing JWT and bcrypt, implementing cascading validations and overlap-detection algorithms to ensure strong data integrity.",
+      image: "/task-management-dashboard.png",
+      technologies: ["MongoDB", "Express", "React", "Node.js", "JWT", "bcrypt"],
+      period: "September 2025 - November 2025",
+    },
+    {
       title: "Aviation Fleet Management Database",
       description:
         "Led design of an airline operations database system, defining normalized schemas and complex entity relationships. Built a frontend demo and Python data generator to populate and showcase realistic system behavior.",

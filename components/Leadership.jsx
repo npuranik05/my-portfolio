@@ -7,9 +7,9 @@ export default function Leadership() {
       organization: "Western Cyber Society",
       period: "Oct 2025 – Present",
       description: [
-        "Collaborated on the design and development of a hybrid financial simulation framework combining deep learning with scenario-based market modeling.",
-        "Led development of the LLM-driven scenario generation pipeline, translating market news and qualitative signals into structured economic assumptions for simulation.",
-        "Supported model evaluation and validation by integrating scenario outputs into downstream risk analysis workflows.",
+        "Collaborating on the design and development of a hybrid financial simulation framework combining deep learning with scenario-based market modeling.",
+        "Leading development of the LLM-driven scenario generation pipeline, translating market news and qualitative signals into structured economic assumptions for simulation.",
+        "Supporting model evaluation and validation by integrating scenario outputs into downstream risk analysis workflows.",
       ],
     },
     {
