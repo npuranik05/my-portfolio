@@ -123,6 +123,17 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Scale the whole rem-based layout up on larger screens */
+  @media (min-width: 1024px) {
+    html {
+      font-size: 17px;
+    }
+  }
+  @media (min-width: 1440px) {
+    html {
+      font-size: 18px;
+    }
+  }
   body {
     @apply bg-background text-foreground;
     background: #0a0a0b;
