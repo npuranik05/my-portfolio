@@ -1,46 +1,63 @@
 "use client"
 
+import Image from "next/image"
+import Reveal from "./Reveal"
+import SectionHeader from "./SectionHeader"
+
 export default function About() {
-  const scrollToExperience = () => {
-    const experienceSection = document.getElementById("experience")
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-12 sm:mb-16 md:mb-20">Get to Know Me</h2>
+    <section id="about" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 relative">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader index="01" title="Get to Know Me" />
 
-        <div className="space-y-6">
+        <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-16 items-center">
           <div>
-            <h3 className="text-2xl font-semibold text-white mb-4 text-center">Outside of Work</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed text-base sm:text-lg text-center">
-            Outside of tech I'm usually out exploring new places in the city, going on spontaneous adventures with friends, or just enjoying time making memories with the people around me. Music is a huge part of my life and one of my favorite ways to connect with others, whether it's sharing playlists, finding new songs, or having long conversations about what we're listening to.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg text-center">
-            What excites me most is building those genuine connections. I love meeting new people, hearing their stories, and discovering the little things we share that spark conversations and friendships I never expect.
-            </p>
-          </div>
-        </div>
-      </div>
+            <Reveal delay={100}>
+              <div className="flex items-center gap-4 mb-8">
+                <h3 className="font-mono text-sm uppercase tracking-[0.25em] text-purple-400 whitespace-nowrap">
+                  Outside of Work
+                </h3>
+                <div className="h-px flex-1 bg-gradient-to-r from-purple-500/60 to-transparent" />
+              </div>
+            </Reveal>
 
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <button
-          onClick={scrollToExperience}
-          className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Experience section"
-        >
-          <svg
-            className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
+            <div className="space-y-8">
+              <Reveal delay={200}>
+                <p className="text-neutral-300 leading-relaxed text-lg sm:text-xl lg:text-2xl">
+                  When I'm not staring at a screen, I'm usually out somewhere in the city, half the
+                  time with no real plan. Some of my favorite days have started with a friend
+                  texting "you free?" and ended somewhere none of us expected. Music is a constant
+                  through all of it. I'm always making playlists, sending people songs they didn't
+                  ask for, and getting way too invested in arguments about what's actually good.
+                </p>
+              </Reveal>
+              <Reveal delay={300}>
+                <p className="text-neutral-300 leading-relaxed text-lg sm:text-xl lg:text-2xl">
+                  Honestly, I just like people. Hearing where they're from, what they care about,
+                  the random thing we somehow both know way too much about. Most of my closest
+                  friendships started as conversations I didn't see coming, and I'd like to keep it
+                  that way.
+                </p>
+              </Reveal>
+            </div>
+          </div>
+
+          <Reveal delay={350} className="justify-self-center">
+            <div className="group relative w-64 sm:w-72 lg:w-full">
+              <div className="absolute -inset-4 rounded-3xl bg-purple-500/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/Photo3.jpg"
+                  alt="Watching the sunset with friends"
+                  width={480}
+                  height={840}
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/50 via-transparent to-transparent" />
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   )

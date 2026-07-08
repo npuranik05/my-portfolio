@@ -1,34 +1,35 @@
 "use client"
 
 import Image from "next/image"
+import Reveal from "./Reveal"
+import SectionHeader from "./SectionHeader"
+import TiltCard from "./TiltCard"
 
-/**
- * Projects Component
- * Displays Nishant Puranik's portfolio projects with interactive cards
- * Features: Responsive grid, hover effects, technology tags, single CTA button
- */
+const GITHUB_URL = "https://github.com/npuranik05"
+
 export default function Projects() {
   const projects = [
     {
+      title: "GreenXV6 - Campus Air Quality Monitoring System",
+      description:
+        "Simulated a network of air quality sensors across campus as a kernel-level proof of concept in xv6, using a spinlock-protected zone-tracking structure and custom syscalls. Extended the scheduler to throttle processes in polluted zones while letting mitigator processes bypass lockout, plus per-process energy accounting via the timer interrupt.",
+      image: "/greenxv6.png",
+      technologies: ["C", "Operating Systems", "xv6", "Kernel Programming", "Scheduling Algorithms", "QEMU"],
+      period: "January 2026 - May 2026",
+      wide: true,
+    },
+    {
       title: "Vehicle Booking System",
       description:
-        "A Python-based fleet management system for optimizing vehicle assignments and booking efficiency, showcasing advanced algorithms and intelligent assignment concepts from prior experience.",
+        "A Python-based fleet management system for optimizing vehicle assignments and booking efficiency. Developed a Streamlit dashboard with live performance analytics and dynamic cost calculation, backed by a SQLite database with full CRUD operations.",
       image: "/vehicle-booking-system.jpg",
       technologies: ["Python", "Plotly", "SQLite", "Pandas", "OpenPyXL", "Streamlit", "GeoTab"],
       period: "May 2024 - August 2024",
     },
     {
-      title: "PhishSense - AI Phishing Detection System",
-      description:
-        "Led development of an AI-powered phishing detection system using PyTorch and DistilBERT. Built FastAPI backend, React dashboard, and browser extension for real-time email scanning.",
-      image: "/cyber.jpg",
-      technologies: ["PyTorch", "FastAPI", "React", "PostgreSQL", "Docker"],
-      period: "September 2025 – Present (In Progress)",
-    },
-    {
       title: "Course Management Platform",
       description:
-        "Architected a production-grade platform using the MERN stack featuring a custom RBAC engine and 30+ RESTful endpoints to manage complex academic workflows. Engineered a robust security layer utilizing JWT and bcrypt, implementing cascading validations and overlap-detection algorithms to ensure strong data integrity.",
+        "Architected a full-stack academic platform using the MERN stack with role-based access control for Admins, TAs, and Students. Built a secure REST API with JWT authentication, assignment sign-up scheduling with overlap detection, and a complete grading system with audit history and bulk CSV import.",
       image: "/task-management-dashboard.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "JWT", "bcrypt"],
       period: "September 2025 - November 2025",
@@ -36,7 +37,7 @@ export default function Projects() {
     {
       title: "Aviation Fleet Management Database",
       description:
-        "Led design of an airline operations database system, defining normalized schemas and complex entity relationships. Built a frontend demo and Python data generator to populate and showcase realistic system behavior.",
+        "Designed a normalized airline operations database in 3NF, modeling complex entity relationships across fleet, maintenance, and scheduling data. Implemented SQL views and stored procedures to handle core business logic, then built a frontend demo to showcase realistic system behavior.",
       image: "/aviation-tracker.jpg",
       technologies: ["MySQL", "Python", "HTML/CSS", "JavaScript"],
       period: "August 2025 - September 2025",
@@ -44,9 +45,9 @@ export default function Projects() {
     {
       title: "Personal Portfolio Website",
       description:
-        "Built and deployed a fully responsive portfolio using React and Tailwind CSS, showcasing projects, resume, and interactive components across devices. Integrated dynamic contact form.",
+        "The site you're on right now. Designed and built with Next.js and Tailwind CSS, featuring cursor-reactive animations, scroll-triggered reveals, and a fully responsive layout. Constantly iterating on it to keep the design sharp and the experience fun to explore.",
       image: "/portfolio-website.jpg",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      technologies: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
       period: "June 2025 - Ongoing",
     },
     {
@@ -67,96 +68,121 @@ export default function Projects() {
     },
   ]
 
-  const scrollToSkills = () => {
-    const skillsSection = document.getElementById("skills")
-    if (skillsSection) {
-      skillsSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
-  const viewAllProjects = () => {
-    window.open("https://github.com/npuranik05", "_blank", "noopener,noreferrer")
+  const openGithub = () => {
+    window.open(GITHUB_URL, "_blank", "noopener,noreferrer")
   }
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-purple-400 mb-20">Projects</h2>
+    <section id="projects" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 relative">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader index="03" title="Projects" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="gradient-card rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-xl group"
-            >
-              <div className="relative">
-                <Image
-                  src={project.image || "/placeholder.jpg"}
-                  alt={project.title}
-                  width={300}
-                  height={150}
-                  className="w-full h-36 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded-full text-xs font-medium">
-                  {project.period}
-                </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-3 leading-relaxed text-xs line-clamp-3">{project.description}</p>
-                <div className="flex gap-1 flex-wrap">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 px-2 py-1 rounded-full text-xs border border-purple-500/30 font-medium"
-                    >
-                      {tech}
+        {/* GreenXV6 spans the full first row, then two symmetric rows of three */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project, index) =>
+            project.wide ? (
+              <Reveal key={project.title} className="h-full sm:col-span-2 lg:col-span-3">
+                <TiltCard
+                  max={4}
+                  onClick={openGithub}
+                  role="link"
+                  aria-label={`${project.title} on GitHub`}
+                  className="group cursor-pointer h-full grid md:grid-cols-[0.9fr_1.1fr] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-purple-400/40 hover:bg-white/[0.05] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                >
+                  <div className="relative overflow-hidden min-h-[200px]">
+                    <Image
+                      src={project.image || "/placeholder.jpg"}
+                      alt={project.title}
+                      width={700}
+                      height={360}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/80 via-transparent to-transparent md:bg-gradient-to-r" />
+                  </div>
+
+                  <div className="flex flex-col p-5 sm:p-7">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="inline-flex items-center gap-2 font-mono text-[11px] text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-400/30">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-60" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400" />
+                          </span>
+                          Most Recent
+                        </span>
+                        <span className="font-mono text-[11px] text-neutral-400 bg-black/40 px-2.5 py-1 rounded-full border border-white/10">
+                          {project.period}
+                        </span>
+                      </div>
+                      <span className="w-9 h-9 shrink-0 rounded-full border border-white/15 flex items-center justify-center text-neutral-500 transition-all duration-300 group-hover:bg-white group-hover:text-neutral-900 group-hover:border-white">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M9 7h8v8" />
+                        </svg>
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-neutral-400 text-sm leading-relaxed mb-4 flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-x-3 gap-y-1.5 flex-wrap font-mono text-[11px] text-purple-300/80">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="whitespace-nowrap">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </TiltCard>
+              </Reveal>
+            ) : (
+              <Reveal key={project.title} delay={(index % 3) * 100} className="h-full">
+                <TiltCard
+                  onClick={openGithub}
+                  role="link"
+                  aria-label={`${project.title} on GitHub`}
+                  className="group cursor-pointer h-full flex flex-col rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-purple-400/40 hover:bg-white/[0.05] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.jpg"}
+                      alt={project.title}
+                      width={400}
+                      height={200}
+                      className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/90 via-transparent to-transparent" />
+                    <span className="absolute bottom-3 left-4 font-mono text-[11px] text-neutral-300 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/10">
+                      {project.period}
                     </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                    <span className="absolute top-3 right-3 w-8 h-8 rounded-full border border-white/15 bg-black/40 backdrop-blur-sm flex items-center justify-center text-neutral-400 opacity-0 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:bg-white group-hover:text-neutral-900 group-hover:border-white">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M9 7h8v8" />
+                      </svg>
+                    </span>
+                  </div>
 
-        <div className="text-center">
-          <button
-            onClick={viewAllProjects}
-            className="group relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl px-8 py-3 text-white font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/50"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-            <span className="relative z-10 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-              View All Projects on GitHub
-            </span>
-          </button>
+                  <div className="flex flex-col flex-1 p-5">
+                    <h3 className="font-display text-lg font-bold text-white mb-2 group-hover:text-purple-200 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-neutral-400 text-sm leading-relaxed mb-4 flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-x-3 gap-y-1.5 flex-wrap font-mono text-[11px] text-purple-300/80">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="whitespace-nowrap">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </TiltCard>
+              </Reveal>
+            )
+          )}
         </div>
-      </div>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <button
-          onClick={scrollToSkills}
-          className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Skills section"
-        >
-          <svg
-            className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
       </div>
     </section>
   )

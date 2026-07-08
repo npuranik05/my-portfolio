@@ -7,32 +7,21 @@ import Projects from "@/components/Projects"
 import Leadership from "@/components/Leadership"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
+import SiteFX from "@/components/SiteFX"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen text-white antialiased">
+      {/* SiteFX renders the shared fixed backdrop plus cursor/scroll effects */}
+      <SiteFX />
       <Navigation />
-      <section id="home" className="min-h-screen">
-        <Hero />
-      </section>
-      <section id="about" className="min-h-screen">
-        <About />
-      </section>
-      <section id="experience" className="min-h-screen">
-        <Experience />
-      </section>
-      <section id="projects" className="min-h-screen">
-        <Projects />
-      </section>
-      <section id="skills" className="min-h-screen">
-        <Skills />
-      </section>
-      <section id="leadership" className="min-h-screen">
-        <Leadership />
-      </section>
-      <section id="contact" className="min-h-screen">
-        <Contact />
-      </section>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Leadership />
+      <Contact />
       <Footer />
     </div>
   )

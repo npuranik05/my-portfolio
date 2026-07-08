@@ -1,5 +1,8 @@
 "use client"
 
+import Reveal from "./Reveal"
+import SectionHeader from "./SectionHeader"
+
 export default function Leadership() {
   const leadershipRoles = [
     {
@@ -64,74 +67,43 @@ export default function Leadership() {
     },
   ]
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact")
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
-    <section
-      id="leadership"
-      className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative"
-    >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-12 sm:mb-16 md:mb-20">Leadership & Community Involvement</h2>
+    <section id="leadership" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 relative">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader index="05" title="Leadership & Community Involvement" />
 
-        <div className="relative">
-          <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 rounded-full shadow-lg shadow-purple-500/50"></div>
+        <div>
+          {leadershipRoles.map((role, index) => (
+            <Reveal key={index} delay={(index % 3) * 100}>
+              <div className="group grid md:grid-cols-[1fr_200px] gap-3 md:gap-10 py-10 sm:py-12 border-t border-white/10 transition-colors duration-500 hover:border-purple-400/40">
+                <div className="font-mono text-sm text-neutral-500 pt-1.5 md:text-right md:order-last group-hover:text-purple-300 transition-colors duration-500">
+                  {role.period}
+                </div>
 
-          <div className="space-y-8 sm:space-y-12">
-            {leadershipRoles.map((role, index) => (
-              <div key={index} className="relative flex items-start">
-                <div className="absolute left-2 sm:left-6 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-2 sm:border-4 border-neutral-800 z-10 shadow-lg shadow-purple-500/50 animate-pulse"></div>
+                <div className="transition-transform duration-500 ease-out group-hover:translate-x-2">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-purple-200 transition-colors duration-500">
+                    {role.title}
+                  </h3>
+                  <p className="text-purple-300/90 font-medium text-base sm:text-lg mb-5">
+                    {role.organization}
+                  </p>
 
-                <div className="ml-8 sm:ml-20 gradient-card p-4 sm:p-6 md:p-8 rounded-xl w-full group hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
-                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
-                    <div className="mb-3 lg:mb-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 mb-1 sm:mb-2">
-                        {role.title}
-                      </h3>
-                      <p className="text-base sm:text-lg md:text-xl text-purple-300 font-semibold">
-                        {role.organization}
-                      </p>
-                    </div>
-                    <span className="text-gray-300 text-sm sm:text-base bg-purple-500/20 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-purple-500/30 font-medium self-start lg:self-auto">
-                      {role.period}
-                    </span>
-                  </div>
-
-                  <ul className="text-gray-300 leading-relaxed space-y-2 sm:space-y-3">
+                  <ul className="space-y-3 max-w-3xl">
                     {role.description.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <span className="text-purple-400 mr-3 sm:mr-4 mt-1 sm:mt-2 text-xs sm:text-sm">●</span>
-                        <span className="text-sm sm:text-base leading-relaxed">{point}</span>
+                      <li key={pointIndex} className="flex items-start gap-3">
+                        <span className="mt-[0.55em] w-1.5 h-1.5 rounded-full bg-purple-400/70 shrink-0" />
+                        <span className="text-neutral-400 leading-relaxed text-sm sm:text-base group-hover:text-neutral-300 transition-colors duration-500">
+                          {point}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            </Reveal>
+          ))}
+          <div className="border-t border-white/10" />
         </div>
-      </div>
-
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-        <button
-          onClick={scrollToContact}
-          className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Contact section"
-        >
-          <svg
-            className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
       </div>
     </section>
   )

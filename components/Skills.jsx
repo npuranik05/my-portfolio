@@ -1,48 +1,103 @@
 "use client"
 
-/**
- * Skills & Certifications Component
- * Displays Nishant Puranik's technical skills and professional certifications
- * Features: Interactive hover effects, responsive grid layout, smooth scrolling navigation
- */
-export default function Skills() {
-  const skills = [
-    // Programming Languages
-    { name: "Python", logo: "🐍", color: "from-blue-500 to-yellow-400" },
-    { name: "Java", logo: "☕", color: "from-orange-600 to-red-600" },
-    { name: "JavaScript", logo: "🟨", color: "from-yellow-400 to-yellow-600" },
-    { name: "TypeScript", logo: "🔷", color: "from-blue-600 to-blue-800" },
-    { name: "C++", logo: "🔵", color: "from-blue-600 to-indigo-600" },
-    { name: "C#", logo: "🔷", color: "from-purple-600 to-blue-600" },
-    { name: "SQL", logo: "🗄️", color: "from-indigo-500 to-purple-600" },
-    { name: "HTML", logo: "🌐", color: "from-orange-500 to-red-500" },
-    { name: "CSS", logo: "🎨", color: "from-blue-400 to-blue-600" },
-    
-    // Frameworks & Libraries
-    { name: "React", logo: "⚛️", color: "from-cyan-400 to-blue-500" },
-    { name: "Next.js", logo: "⚡", color: "from-gray-700 to-gray-900" },
-    { name: "Node.js", logo: "🟢", color: "from-green-500 to-green-700" },
-    { name: "FastAPI", logo: "🚀", color: "from-green-400 to-teal-500" },
-    { name: "Flask", logo: "🌶️", color: "from-red-500 to-orange-500" },
-    { name: "PyTorch", logo: "🔥", color: "from-orange-500 to-red-500" },
-    { name: "TensorFlow", logo: "🧠", color: "from-orange-400 to-yellow-500" },
-    { name: "Pandas", logo: "🐼", color: "from-blue-400 to-indigo-500" },
-    { name: "Tailwind", logo: "💨", color: "from-teal-400 to-cyan-500" },
-    
-    // Databases & Cloud
-    { name: "PostgreSQL", logo: "🐘", color: "from-blue-600 to-indigo-600" },
-    { name: "MySQL", logo: "🐬", color: "from-orange-500 to-blue-500" },
-    { name: "AWS", logo: "☁️", color: "from-orange-400 to-yellow-500" },
-    { name: "Docker", logo: "🐳", color: "from-blue-400 to-blue-600" },
-    
-    // Tools & Analytics
-    { name: "Git", logo: "🌿", color: "from-orange-600 to-red-600" },
-    { name: "Power BI", logo: "📊", color: "from-yellow-500 to-orange-500" },
-    { name: "Tableau", logo: "📈", color: "from-blue-500 to-purple-500" },
-    { name: "Jira", logo: "🎯", color: "from-blue-600 to-blue-800" },
-    { name: "Figma", logo: "🎨", color: "from-purple-500 to-pink-500" },
-  ]
+import Reveal from "./Reveal"
+import SectionHeader from "./SectionHeader"
 
+// Icons served from cdn.simpleicons.org. `color` overrides brands whose
+// official mark is too dark for the near-black background. Skills without
+// an available brand icon use a typographic `mark` instead.
+const skillGroups = [
+  {
+    label: "Languages",
+    skills: [
+      { name: "Python", slug: "python" },
+      { name: "Java", slug: "openjdk", color: "5382a1" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "C++", slug: "cplusplus" },
+      { name: "C#", mark: "C#" },
+      { name: "SQL", mark: "SQL" },
+      { name: "HTML", slug: "html5" },
+      { name: "CSS", slug: "css" },
+    ],
+  },
+  {
+    label: "Frameworks & Libraries",
+    skills: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs", color: "ffffff" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "FastAPI", slug: "fastapi" },
+      { name: "Flask", slug: "flask", color: "ffffff" },
+      { name: "PyTorch", slug: "pytorch" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "Pandas", slug: "pandas", color: "ffffff" },
+      { name: "Tailwind", slug: "tailwindcss" },
+    ],
+  },
+  {
+    label: "Databases & Cloud",
+    skills: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "AWS", mark: "AWS" },
+      { name: "Docker", slug: "docker" },
+    ],
+  },
+  {
+    label: "Tools & Analytics",
+    skills: [
+      { name: "Git", slug: "git" },
+      { name: "Power BI", mark: "PBI" },
+      { name: "Tableau", mark: "TAB" },
+      { name: "Jira", slug: "jira" },
+      { name: "Figma", slug: "figma" },
+    ],
+  },
+]
+
+function SkillTile({ skill }) {
+  const onMove = (e) => {
+    const el = e.currentTarget
+    const rect = el.getBoundingClientRect()
+    el.style.setProperty("--x", `${e.clientX - rect.left}px`)
+    el.style.setProperty("--y", `${e.clientY - rect.top}px`)
+  }
+
+  return (
+    <div
+      onMouseMove={onMove}
+      className="group relative overflow-hidden flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-5 transition-all duration-300 hover:border-purple-400/40 hover:bg-white/[0.06] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.45)] cursor-default"
+    >
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(110px circle at var(--x, 50%) var(--y, 50%), rgba(168, 85, 247, 0.18), transparent 70%)",
+        }}
+      />
+      <div className="h-9 flex items-center justify-center">
+        {skill.slug ? (
+          <img
+            src={`https://cdn.simpleicons.org/${skill.slug}${skill.color ? `/${skill.color}` : ""}`}
+            alt=""
+            loading="lazy"
+            className="w-9 h-9 transition-transform duration-300 group-hover:scale-110"
+          />
+        ) : (
+          <span className="font-display text-2xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 transition-transform duration-300 group-hover:scale-110">
+            {skill.mark}
+          </span>
+        )}
+      </div>
+      <span className="text-xs sm:text-sm text-neutral-400 group-hover:text-white transition-colors duration-300 text-center leading-tight">
+        {skill.name}
+      </span>
+    </div>
+  )
+}
+
+export default function Skills() {
   const certifications = [
     {
       name: "AWS Cloud Practitioner Essentials",
@@ -61,113 +116,63 @@ export default function Skills() {
     },
   ]
 
-  const scrollToLeadership = () => {
-    const leadershipSection = document.getElementById("leadership")
-    if (leadershipSection) {
-      leadershipSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
-    <section id="skills" className="min-h-screen py-12 sm:py-20 px-4 sm:px-6 bg-neutral-800 relative flex flex-col">
-      <div className="max-w-6xl mx-auto flex-1">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-12 sm:mb-16 md:mb-20 mt-8">Skills</h2>
+    <section id="skills" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 relative">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader index="04" title="Skills" />
 
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">Technical Skills</h3>
-          <div className="flex flex-wrap gap-3 justify-center max-w-5xl mx-auto">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className={`group relative overflow-hidden bg-gradient-to-r ${skill.color} backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-white/20 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/30 hover:border-white/40`}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-bold group-hover:scale-110 transition-transform duration-300">
-                    {skill.logo}
-                  </span>
-                  <span className="group-hover:text-white transition-colors duration-300 text-sm font-medium">
-                    {skill.name}
-                  </span>
+        <div className="mb-20 space-y-12">
+          {skillGroups.map((group, groupIndex) => (
+            <div key={group.label}>
+              <Reveal>
+                <div className="flex items-center gap-4 mb-6">
+                  <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-purple-400 whitespace-nowrap">
+                    {group.label}
+                  </h3>
+                  <div className="h-px flex-1 bg-white/10" />
                 </div>
+              </Reveal>
+              <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 gap-3">
+                {group.skills.map((skill, index) => (
+                  <Reveal key={skill.name} delay={Math.min(index * 40, 320)}>
+                    <SkillTile skill={skill} />
+                  </Reveal>
+                ))}
               </div>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <Reveal>
+            <div className="flex items-center gap-4 mb-2">
+              <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-purple-400 whitespace-nowrap">
+                Actively Learning
+              </h3>
+              <div className="h-px flex-1 bg-white/10" />
+            </div>
+            <p className="text-neutral-500 text-sm mb-8">Currently pursuing these courses</p>
+          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {certifications.map((cert, index) => (
+              <Reveal key={cert.name} delay={index * 120}>
+                <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-500 hover:border-purple-400/40 hover:bg-white/[0.05] hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <div className="font-display font-bold text-white leading-tight mb-1 group-hover:text-purple-200 transition-colors duration-300">
+                    {cert.name}
+                  </div>
+                  <div className="font-mono text-xs text-purple-300/80 mb-4">{cert.issuer}</div>
+                  <div className="relative aspect-[4/3] bg-white rounded-xl border border-white/10 flex items-center justify-center overflow-hidden p-4">
+                    <img
+                      src={cert.image}
+                      alt={`${cert.name} logo`}
+                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
-
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-2 text-center">Actively Learning</h3>
-          <p className="text-purple-300 text-sm text-center mb-8">Currently pursuing these courses</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            <div className="group relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm text-white rounded-xl border border-purple-500/30 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/60">
-              <div className="p-4">
-                <div className="text-center mb-3">
-                  <div className="font-bold text-sm group-hover:text-purple-300 transition-colors duration-300 leading-tight mb-2">
-                    AWS Cloud Practitioner Essentials
-                  </div>
-                  <div className="text-xs text-purple-300 mb-3">Amazon Web Services</div>
-                </div>
-                <div className="relative aspect-[4/3] bg-white rounded-lg border border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300 overflow-hidden shadow-lg p-4">
-                  <img
-                    src="/amazon.png"
-                    alt="AWS Cloud Practitioner Essentials logo"
-                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm text-white rounded-xl border border-purple-500/30 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/60">
-              <div className="p-4">
-                <div className="text-center mb-3">
-                  <div className="font-bold text-sm group-hover:text-purple-300 transition-colors duration-300 leading-tight mb-2">
-                    Meta React Developer
-                  </div>
-                  <div className="text-xs text-purple-300 mb-3">Coursera</div>
-                </div>
-                <div className="relative aspect-[4/3] bg-white rounded-lg border border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300 overflow-hidden shadow-lg p-4">
-                  <img
-                    src="/meta.jpeg"
-                    alt="Meta React Developer logo"
-                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm text-white rounded-xl border border-purple-500/30 font-medium cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/60">
-              <div className="p-4">
-                <div className="text-center mb-3">
-                  <div className="font-bold text-sm group-hover:text-purple-300 transition-colors duration-300 leading-tight mb-2">
-                    TensorFlow 2.0
-                  </div>
-                  <div className="text-xs text-purple-300 mb-3">Udemy</div>
-                </div>
-                <div className="relative aspect-[4/3] bg-white rounded-lg border border-purple-400/50 flex items-center justify-center group-hover:border-purple-300 transition-colors duration-300 overflow-hidden shadow-lg p-4">
-                  <img
-                    src="/udemy.png"
-                    alt="TensorFlow 2.0 logo"
-                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <button
-          onClick={scrollToLeadership}
-          className="animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to Leadership section"
-        >
-          <svg
-            className="w-8 h-8 text-purple-400 hover:text-purple-300 transition-colors duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
       </div>
     </section>
   )

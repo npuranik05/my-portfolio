@@ -77,6 +77,7 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-space-grotesk);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,11 +120,36 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
-    background: #262626;
+    background: #0a0a0b;
     min-height: 100vh;
   }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+::selection {
+  background: rgba(168, 85, 247, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2e;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
 }
 
 .gradient-button {
@@ -201,4 +227,210 @@
 
 .animate-bounce-gentle {
   animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* ---------- Hero (modern) ---------- */
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 75%);
+}
+
+/* Site-wide fixed backdrop: same grid + ambience as the hero */
+.site-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 42%, black 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 42%, black 25%, transparent 80%);
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.hero-name {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    #c4b5fd 45%,
+    #f0abfc 55%,
+    #ffffff 65%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-shine 6s linear infinite;
+}
+
+@keyframes orb-drift-a {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 40px -30px;
+  }
+}
+
+@keyframes orb-drift-b {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: -50px 25px;
+  }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-orb-a {
+  animation: orb-drift-a 14s ease-in-out infinite;
+}
+
+.hero-orb-b {
+  animation: orb-drift-b 18s ease-in-out infinite;
+}
+
+@property --ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes ring-spin {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+/* Animates the gradient angle (not the element) so it works on any shape */
+.hero-ring {
+  background: conic-gradient(
+    from var(--ring-angle, 0deg),
+    rgba(168, 85, 247, 0) 0%,
+    rgba(168, 85, 247, 0.9) 20%,
+    rgba(236, 72, 153, 0.9) 40%,
+    rgba(59, 130, 246, 0.9) 60%,
+    rgba(168, 85, 247, 0) 80%
+  );
+  animation: ring-spin 6s linear infinite;
+}
+
+/* Animated gradient text (contact headings etc.) */
+.gradient-shimmer {
+  background: linear-gradient(90deg, #c084fc, #f472b6, #a78bfa, #c084fc);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-shine 5s linear infinite;
+}
+
+/* 3D tilt cards with cursor glare */
+.tilt-card {
+  position: relative;
+  transition:
+    transform 0.25s ease-out,
+    border-color 0.5s,
+    background-color 0.5s,
+    box-shadow 0.5s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.09),
+    transparent 60%
+  );
+  z-index: 10;
+}
+
+.tilt-card:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* Film grain overlay */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Blinking typewriter cursor */
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.type-cursor {
+  display: inline-block;
+  width: 0.08em;
+  min-width: 3px;
+  height: 0.95em;
+  margin-left: 0.08em;
+  vertical-align: baseline;
+  transform: translateY(0.12em);
+  background: linear-gradient(180deg, #c4b5fd, #f0abfc);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    opacity: 1;
+    animation: none;
+  }
+  .hero-name,
+  .hero-orb-a,
+  .hero-orb-b,
+  .hero-ring,
+  .type-cursor {
+    animation: none;
+  }
 }
