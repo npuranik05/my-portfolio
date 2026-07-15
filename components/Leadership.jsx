@@ -75,8 +75,8 @@ export default function Leadership() {
         <div>
           {leadershipRoles.map((role, index) => (
             <Reveal key={index} delay={(index % 3) * 100}>
-              <div className="group grid md:grid-cols-[1fr_200px] gap-3 md:gap-10 py-10 sm:py-12 border-t border-white/10 transition-colors duration-500 hover:border-purple-400/40">
-                <div className="font-mono text-sm text-neutral-500 pt-1.5 md:text-right md:order-last group-hover:text-purple-300 transition-colors duration-500">
+              <div className="group grid md:grid-cols-[1fr_auto] gap-3 md:gap-10 py-10 sm:py-12 border-t border-white/10 transition-colors duration-500 hover:border-purple-400/40">
+                <div className="font-mono text-sm text-neutral-500 pt-1.5 whitespace-nowrap md:text-right md:order-last group-hover:text-purple-300 transition-colors duration-500">
                   {role.period}
                 </div>
 

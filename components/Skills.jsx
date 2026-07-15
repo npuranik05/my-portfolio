@@ -145,13 +145,12 @@ export default function Skills() {
 
         <div>
           <Reveal>
-            <div className="flex items-center gap-4 mb-2">
+            <div className="flex items-center gap-4 mb-8">
               <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-purple-400 whitespace-nowrap">
                 Actively Learning
               </h3>
               <div className="h-px flex-1 bg-white/10" />
             </div>
-            <p className="text-neutral-500 text-sm mb-8">Currently pursuing these courses</p>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {certifications.map((cert, index) => (
