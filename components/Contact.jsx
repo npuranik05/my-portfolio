@@ -37,7 +37,7 @@ export default function Contact() {
       icon: <LinkedInIcon />,
       label: "LinkedIn",
       handle: "nishant-puranik",
-      link: "https://www.linkedin.com/in/nishant-puranik-9484a6211/",
+      link: "https://www.linkedin.com/in/nishant-puranik-9484a6211",
     },
     {
       icon: <InstagramIcon />,
@@ -46,10 +46,6 @@ export default function Contact() {
       link: "https://www.instagram.com/nishant.puranik",
     },
   ]
-
-  const handleContactClick = (link) => {
-    window.open(link, "_blank", "noopener,noreferrer")
-  }
 
   return (
     <section id="contact" className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 relative overflow-hidden">
@@ -84,8 +80,9 @@ export default function Contact() {
         <div>
           {contactInfo.map((contact, index) => (
             <Reveal key={contact.label} delay={300 + index * 100}>
-              <button
-                onClick={() => handleContactClick(contact.link)}
+              <a
+                href={contact.link}
+                {...(contact.link.startsWith("http") && { target: "_blank", rel: "noopener" })}
                 className="group relative w-full grid grid-cols-[auto_1fr_auto] items-center gap-5 sm:gap-8 py-6 sm:py-8 px-1 sm:px-4 border-t border-white/10 text-left transition-all duration-500 hover:border-purple-400/40 overflow-hidden"
               >
                 {/* Hover wash */}
@@ -114,7 +111,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </span>
-              </button>
+              </a>
             </Reveal>
           ))}
           <div className="border-t border-white/10" />

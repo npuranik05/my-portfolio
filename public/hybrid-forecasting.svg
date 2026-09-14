@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140d22"/>
+      <stop offset="1" stop-color="#0a0b12"/>
+    </linearGradient>
+    <linearGradient id="pred" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="700" height="360" fill="url(#bg)"/>
+  <rect width="700" height="360" fill="url(#glow)"/>
+  <g stroke="#ffffff" stroke-opacity="0.06">
+    <path d="M0 60H700M0 120H700M0 180H700M0 240H700M0 300H700"/>
+    <path d="M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360"/>
+  </g>
+  <path d="M430 0V360" stroke="#ffffff" stroke-opacity="0.18" stroke-dasharray="4 6"/>
+  <path d="M430 190 C470 150 500 120 540 130 S610 90 700 70 L700 170 C640 180 600 210 540 205 S470 220 430 200Z" fill="url(#band)"/>
+  <path d="M0 250 L30 235 L60 245 L90 215 L120 228 L150 190 L180 205 L210 160 L240 178 L270 150 L300 185 L330 170 L360 205 L390 185 L430 196" fill="none" stroke="#94a3b8" stroke-opacity="0.75" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M430 196 C470 170 500 140 540 165 S620 120 700 118" fill="none" stroke="url(#pred)" stroke-width="3.5" stroke-linecap="round"/>
+  <g fill="#e9d5ff">
+    <circle cx="430" cy="196" r="5"/>
+    <circle cx="540" cy="165" r="4" fill-opacity="0.8"/>
+    <circle cx="700" cy="118" r="4" fill-opacity="0.8"/>
+  </g>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#c4b5fd" fill-opacity="0.8">
+    <text x="24" y="34">realized σ</text>
+    <text x="446" y="34">TFT + GPT-4o scenarios</text>
+  </g>
+</svg>

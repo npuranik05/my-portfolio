@@ -17,6 +17,17 @@ export default function Projects() {
       technologies: ["C", "Operating Systems", "xv6", "Kernel Programming", "Scheduling Algorithms", "QEMU"],
       period: "January 2026 - May 2026",
       wide: true,
+      featured: true,
+    },
+    {
+      title: "Hybrid Intelligence Stock Forecasting - Western Cyber Society",
+      description:
+        "Built a hybrid volatility forecasting system with a team at Western Cyber Society, pairing a Temporal Fusion Transformer with GPT-4o market scenarios to reproduce a Cornell AAAI paper. Owned the LLM scenario layer with a two-step strict-JSON prompt chain, then rebuilt the backtest, beating HAR by 12%.",
+      image: "/hybrid-forecasting.svg",
+      technologies: ["Python", "PyTorch", "GPT-4o", "pandas", "pytest"],
+      period: "October 2025 - March 2026",
+      wide: true,
+      flip: true,
     },
     {
       title: "Vehicle Booking System",
@@ -77,7 +88,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader index="03" title="Projects" />
 
-        {/* GreenXV6 spans the full first row, then two symmetric rows of three */}
+        {/* The two most recent projects span full rows (alternating image side), then two symmetric rows of three */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) =>
             project.wide ? (
@@ -87,9 +98,9 @@ export default function Projects() {
                   onClick={openGithub}
                   role="link"
                   aria-label={`${project.title} on GitHub`}
-                  className="group cursor-pointer h-full grid md:grid-cols-[0.9fr_1.1fr] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-purple-400/40 hover:bg-white/[0.05] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  className={`group cursor-pointer h-full grid ${project.flip ? "md:grid-cols-[1.1fr_0.9fr]" : "md:grid-cols-[0.9fr_1.1fr]"} rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] hover:border-purple-400/40 hover:bg-white/[0.05] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
                 >
-                  <div className="relative overflow-hidden min-h-[200px]">
+                  <div className={`relative overflow-hidden min-h-[200px] ${project.flip ? "md:order-2" : ""}`}>
                     <Image
                       src={project.image || "/placeholder.jpg"}
                       alt={project.title}
@@ -97,19 +108,21 @@ export default function Projects() {
                       height={360}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/80 via-transparent to-transparent md:bg-gradient-to-r" />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-[#0a0a0b]/80 via-transparent to-transparent ${project.flip ? "md:bg-gradient-to-l" : "md:bg-gradient-to-r"}`} />
                   </div>
 
                   <div className="flex flex-col p-5 sm:p-7">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="inline-flex items-center gap-2 font-mono text-[11px] text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-400/30">
-                          <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-60" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400" />
+                        {project.featured && (
+                          <span className="inline-flex items-center gap-2 font-mono text-[11px] text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-400/30">
+                            <span className="relative flex h-2 w-2">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-60" />
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400" />
+                            </span>
+                            Most Recent
                           </span>
-                          Most Recent
-                        </span>
+                        )}
                         <span className="font-mono text-[11px] text-neutral-400 bg-black/40 px-2.5 py-1 rounded-full border border-white/10">
                           {project.period}
                         </span>
