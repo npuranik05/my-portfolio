@@ -15,7 +15,7 @@ export default function Projects() {
         "Simulated a network of air quality sensors across campus as a kernel-level proof of concept in xv6, using a spinlock-protected zone-tracking structure and custom syscalls. Extended the scheduler to throttle processes in polluted zones while letting mitigator processes bypass lockout, plus per-process energy accounting via the timer interrupt.",
       image: "/greenxv6.png",
       technologies: ["C", "Operating Systems", "xv6", "Kernel Programming", "Scheduling Algorithms", "QEMU"],
-      period: "January 2026 - May 2026",
+      period: "Jan 2026 – May 2026",
       wide: true,
       featured: true,
     },
@@ -25,7 +25,7 @@ export default function Projects() {
         "Built a hybrid volatility forecasting system with a team at Western Cyber Society, pairing a Temporal Fusion Transformer with GPT-4o market scenarios to reproduce a Cornell AAAI paper. Owned the LLM scenario layer with a two-step strict-JSON prompt chain, then rebuilt the backtest, beating HAR by 12%.",
       image: "/hybrid-forecasting.svg",
       technologies: ["Python", "PyTorch", "GPT-4o", "pandas", "pytest"],
-      period: "October 2025 - March 2026",
+      period: "Oct 2025 – Mar 2026",
       wide: true,
       flip: true,
     },
@@ -35,7 +35,7 @@ export default function Projects() {
         "A Python-based fleet management system for optimizing vehicle assignments and booking efficiency. Developed a Streamlit dashboard with live performance analytics and dynamic cost calculation, backed by a SQLite database with full CRUD operations.",
       image: "/vehicle-booking-system.jpg",
       technologies: ["Python", "Plotly", "SQLite", "Pandas", "OpenPyXL", "Streamlit", "GeoTab"],
-      period: "May 2024 - August 2024",
+      period: "May 2024 – Aug 2024",
     },
     {
       title: "Course Management Platform",
@@ -43,7 +43,7 @@ export default function Projects() {
         "Architected a full-stack academic platform using the MERN stack with role-based access control for Admins, TAs, and Students. Built a secure REST API with JWT authentication, assignment sign-up scheduling with overlap detection, and a complete grading system with audit history and bulk CSV import.",
       image: "/task-management-dashboard.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "JWT", "bcrypt"],
-      period: "September 2025 - November 2025",
+      period: "Sept 2025 – Nov 2025",
     },
     {
       title: "Aviation Fleet Management Database",
@@ -51,7 +51,7 @@ export default function Projects() {
         "Designed a normalized airline operations database in 3NF, modeling complex entity relationships across fleet, maintenance, and scheduling data. Implemented SQL views and stored procedures to handle core business logic, then built a frontend demo to showcase realistic system behavior.",
       image: "/aviation-tracker.jpg",
       technologies: ["MySQL", "Python", "HTML/CSS", "JavaScript"],
-      period: "August 2025 - September 2025",
+      period: "Aug 2025 – Sept 2025",
     },
     {
       title: "Personal Portfolio Website",
@@ -59,7 +59,7 @@ export default function Projects() {
         "The site you're on right now. Designed and built with Next.js and Tailwind CSS, featuring cursor-reactive animations, scroll-triggered reveals, and a fully responsive layout. Constantly iterating on it to keep the design sharp and the experience fun to explore.",
       image: "/portfolio-website.jpg",
       technologies: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-      period: "June 2025 - Ongoing",
+      period: "June 2025 – Present",
     },
     {
       title: "Real Estate Management System",
@@ -67,7 +67,7 @@ export default function Projects() {
         "Built a multi-user desktop app in JavaFX with secure login, role-based access, and housing data management via Derby DB. Created detailed UML diagrams and implemented distinct features.",
       image: "/real-estate-management.jpg",
       technologies: ["JavaFX", "Derby DB", "UML", "Java"],
-      period: "January 2025 - March 2025",
+      period: "Jan 2025 – Mar 2025",
     },
     {
       title: "Fantasy RPG Game",
@@ -75,7 +75,7 @@ export default function Projects() {
         "Led development on a Unity-based RPG game, designing and implementing 34+ C# classes for combat, inventory, dialogue, and player progression systems. Created detailed UML diagrams.",
       image: "/fantasy-rpg-game.jpg",
       technologies: ["Unity", "C#", "Git", "UML"],
-      period: "January 2025 - March 2025",
+      period: "Jan 2025 – Mar 2025",
     },
   ]
 

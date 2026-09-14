@@ -10,7 +10,7 @@ export default function Experience() {
       company: "MHIRJ",
       location: "Mississauga, ON",
       logo: "/mitsubishi.png",
-      period: "May 2026 - Present",
+      period: "May 2026 – Present",
       description: [
         "At MHIRJ, I work on analytics infrastructure for Mitsubishi's CRJ regional jet fleet, supporting 2,000+ aircraft and processing over a million operational records to power dashboards and forecasting tools used by top aviation operators. I'm currently working on forecasting systems that project fleet maintenance and lifecycle information years in advance, giving the company and its clients a clearer view of what's ahead.",
       ],
@@ -20,7 +20,7 @@ export default function Experience() {
       company: "VERYON",
       location: "United Kingdom",
       logo: "/veryon.jpeg",
-      period: "May 2025 - August 2025",
+      period: "May 2025 – Aug 2025",
       description: [
         "During my time at Veryon, I worked on their flagship aviation fleet management platform, Tracking+. A lot of my day-to-day was spent digging into big enterprise databases, writing and optimizing SQL queries, and fixing bugs that affected real customers. I loved the challenge of turning confusing issues into clear solutions and seeing the difference it made when clients could get the insights they needed without delay. Working alongside developers, QA, and product teams also taught me how much better things go when people bring different skills to the table and solve problems together.",
       ],
@@ -30,7 +30,7 @@ export default function Experience() {
       company: "Metrolinx GO Transit",
       location: "Toronto, ON",
       logo: "/metrolinx.jpg",
-      period: "May 2024 - August 2024",
+      period: "May 2024 – Aug 2024",
       description: [
         "At Metrolinx, I got to combine my technical skills with a huge real-world system: the fleet that keeps Toronto moving. I built a booking tool in Python and Excel that streamlined how teams reserved vehicles, making the process faster and easier for everyone. I also helped analyze fleet performance data using GeoTab and supported compliance tracking for equipment. Beyond the technical side, I learned what it's like to work inside a large organization and saw firsthand how technology can connect people across departments to make everyday operations smoother.",
       ],
