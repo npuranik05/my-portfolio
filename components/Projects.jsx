@@ -10,7 +10,7 @@ const GITHUB_URL = "https://github.com/npuranik05"
 export default function Projects() {
   const projects = [
     {
-      title: "GreenXV6 - Campus Air Quality Monitoring System",
+      title: "GreenXV6 - Kernel-Level Environmental Monitoring",
       description:
         "Simulated a network of air quality sensors across campus as a kernel-level proof of concept in xv6, using a spinlock-protected zone-tracking structure and custom syscalls. Extended the scheduler to throttle processes in polluted zones while letting mitigator processes bypass lockout, plus per-process energy accounting via the timer interrupt.",
       image: "/greenxv6.png",
