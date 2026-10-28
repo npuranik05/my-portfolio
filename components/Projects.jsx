@@ -20,7 +20,7 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Hybrid Intelligence Stock Forecasting - Western Cyber Society",
+      title: "Hybrid Intelligence Volatility Forecaster - Western Cyber Society",
       description:
         "Built a hybrid volatility forecasting system with a team at Western Cyber Society, pairing a Temporal Fusion Transformer with GPT-4o market scenarios to reproduce a Cornell AAAI paper. Owned the LLM scenario layer with a two-step strict-JSON prompt chain, then rebuilt the backtest, beating HAR by 12%.",
       image: "/hybrid-forecasting.svg",
