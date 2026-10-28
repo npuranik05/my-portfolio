@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing my projects, experience, and s
 
 ## 🎯 About
 
-This portfolio website represents my journey as a software engineer, highlighting my experience at Metrolinx and Veryon, showcasing various projects I've built, and demonstrating my technical skills. The site features a modern design with smooth animations, responsive layout, and interactive navigation.
+This portfolio website represents my journey as a software engineer, highlighting my experience at MHIRJ, Veryon, and Metrolinx, showcasing various projects I've built, and demonstrating my technical skills. The site features a modern design with smooth animations, responsive layout, and interactive navigation.
 
 ## ✨ Features
 
@@ -86,6 +86,13 @@ portfolio/
 
 ## 💼 Experience
 
+### Full-Stack Developer & Data Analyst - MHIRJ
+*May 2026 - Present*
+
+- Own the Heavy Maintenance forecaster, projecting aircraft utilization and maintenance years ahead
+- Lead development of an Airworthiness Directive forecaster covering 200+ directives
+- Build analytics infrastructure and Power BI dashboards for a 2,000+ aircraft CRJ fleet
+
 ### Software Engineering Intern - VERYON
 *May 2025 - August 2025*
 
@@ -94,7 +101,7 @@ portfolio/
 - Resolved client-reported issues affecting real customers
 - Collaborated with developers, QA, and product teams
 
-### Non-Revenue Vehicle Fleet Analyst Intern - Metrolinx GO Transit
+### Data Analyst Intern - Metrolinx GO Transit
 *May 2024 - August 2024*
 
 - Built Python/Excel booking system streamlining vehicle reservations
@@ -106,12 +113,13 @@ portfolio/
 
 The portfolio showcases several key projects including:
 
-- **Aviation Tracker**: Fleet management system
-- **Fantasy RPG Game**: Interactive gaming application
-- **Fleet Dashboard**: Data visualization tool
-- **Real Estate Management**: Property management system
-- **Task Management Dashboard**: Productivity application
-- **Vehicle Booking System**: Reservation platform
+- **GreenXV6**: Kernel-level environmental monitoring in xv6
+- **Hybrid Intelligence Volatility Forecaster**: Temporal Fusion Transformer + GPT-4o volatility forecasting
+- **Course Management Platform**: Full-stack academic platform with role-based access
+- **Aviation Fleet Management Database**: Normalized airline operations database
+- **Vehicle Booking System**: Fleet booking and analytics dashboard
+- **Real Estate Management System**: JavaFX property management app
+- **Fantasy RPG Game**: Unity-based RPG game
 
 Each project includes detailed descriptions, technologies used, and links to live demos and source code.
 
